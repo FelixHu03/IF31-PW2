@@ -9,29 +9,29 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/menu', function (Request $request){
+Route::get('/menu', function (Request $request) {
     return response()->json(['Home', 'Profile', 'About', 'Contact Us']);
 });
-Route::get('/donatur', function (Request $request){
+Route::get('/donatur', function (Request $request) {
     return response()->json(
-    [
         [
-            'id' => 1,
-            'name' => 'Felix'
-        ],
-        [
-        'id' => 2,
-        'name'=> 'Hu'
+            [
+                'id' => 1,
+                'name' => 'Felix'
+            ],
+            [
+                'id' => 2,
+                'name' => 'Hu'
+            ]
         ]
-    ]
-);
+    );
+});
 // API CRUD  Funding
-Route::get('/funding', [FundingController::class,'index']);
-Route::post('/funding', [FundingController::class,'store']);
-Route::get('/funding{id}', [FundingController::class,'show']);
-Route::put('/funding{id}', [FundingController::class,'update']);
-Route::delete('/funding{id}', [FundingController::class,'destroy']);
+Route::get('/funding', [FundingController::class, 'index']);
+Route::post('/funding', [FundingController::class, 'store']);
+Route::get('/funding{id}', [FundingController::class, 'show']);
+Route::put('/funding{id}', [FundingController::class, 'update']);
+Route::delete('/funding{id}', [FundingController::class, 'destroy']);
 
 // api CRUD Donation
 Route::apiResource('donation', DonationController::class);
-});

@@ -14,7 +14,13 @@ class FundingController extends Controller
     public function index()
     {
         //
-        return unding
+        $data = [
+            'status' => 'success',
+            'massage'=> 'data Funding bermasalah',
+            'data'=> funding::all(),
+        ];
+        return response()->json($data);
+        // return funding::all();
     }
 
     /**
