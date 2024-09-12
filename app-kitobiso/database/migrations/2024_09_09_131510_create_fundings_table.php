@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('progress, 3');
             $table->string('duration');
             $table->double('collected');
-            $table->double('target');
-            $table->string('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users'); //crea
         });
     }
