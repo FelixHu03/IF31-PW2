@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Donation;
 use App\Models\funding;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -23,7 +24,19 @@ class DatabaseSeeder extends Seeder
 
         User::factory(10)->create();
         Funding::create([
-        'title'
+        'title'=> 'Bantuan Kemanusiaan',
+        'desc'=> 'Bantuan untuk Korban bencana alam',
+        'image'=>'bantuan-kemanusiaan.jpg',
+        'progress'=> 0,
+        'duration'=> '1 bulan',
+        'collected'=>0,
+        'target' =>1000000,
+        'user_id'=> 1,
+        ]);
+        Donation::create([
+            'amount' => 100000,
+            'funding_id'=>1,
+            'user_id'=>2,
         ]);
     }
 }
