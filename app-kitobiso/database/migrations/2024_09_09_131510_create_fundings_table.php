@@ -16,11 +16,14 @@ return new class extends Migration
             $table-> string('title');
             $table->text('desc');
             $table->string('image');
-            $table->string('progress, 3');
+            $table->string('progress', 3);
             $table->string('duration');
             $table->double('collected');
+            $table->double('target');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users'); //crea
+            $table->timestamps();
+
         });
     }
 

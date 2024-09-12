@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\funding;
+use App\Models\Funding as ModelsFunding;
 use Illuminate\Http\Request;
 
 class FundingController extends Controller
@@ -13,6 +14,7 @@ class FundingController extends Controller
     public function index()
     {
         //
+        return unding
     }
 
     /**
