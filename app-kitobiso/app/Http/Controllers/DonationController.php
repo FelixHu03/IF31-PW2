@@ -12,7 +12,12 @@ class DonationController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'status' => 'success',
+            'massage'=> 'data Donation Berhasil',
+            'data'=> donation::all(),
+        ];
+        return response()->json($data);
     }
 
     /**

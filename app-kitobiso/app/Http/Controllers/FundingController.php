@@ -16,7 +16,7 @@ class FundingController extends Controller
         //
         $data = [
             'status' => 'success',
-            'massage'=> 'data Funding bermasalah',
+            'massage'=> 'data Funding berhasil',
             'data'=> funding::all(),
         ];
         return response()->json($data);
